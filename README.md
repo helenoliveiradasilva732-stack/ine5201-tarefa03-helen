@@ -1,45 +1,52 @@
-# Calculadora com interface gráfica
+# Jogo da Forca
 
-Projeto da Tarefa 02 da disciplina INE5201: uma calculadora de operações básicas feita em Python com interface Tkinter.
+Projeto da Tarefa 03 da disciplina INE5201. O programa implementa o jogo da forca em Python com interface grafica Tkinter.
 
 ## Requisitos
 
-- Python 3.8 ou superior.
-- Tkinter, incluído na instalação padrão do Python para Windows.
+- Python 3.8 ou superior
+- Tkinter, incluido na instalacao padrao do Python
 
-## Como executar
-
-No Windows, abra o terminal na pasta do projeto e execute:
+No Windows, execute:
 
 ```powershell
-py calculadora_gui.py
+py forca_gui.py
 ```
-
-Use os botões da interface para formar uma expressão e pressione `=` para calcular. O ponto (`.`) insere casas decimais. O botão `←` apaga o último caractere. O botão `C` limpa o display e todo o histórico.
 
 ## Funcionalidades
 
-- Operações de adição, subtração, multiplicação e divisão.
-- Expressões com números decimais e precedência matemática.
-- Validação de expressões e mensagem específica para divisão por zero.
-- Histórico dos 10 cálculos mais recentes, exibidos ao lado da calculadora.
-- Botões numéricos, operadores, igualdade, limpeza e backspace.
+- Palavra aleatoria carregada de `palavras.txt`
+- Banco com mais de 50 palavras
+- Display com letras ocultas
+- Teclado virtual com letras A-Z
+- Teclado fisico tambem aceita letras
+- Boneco visual com seis partes
+- Contador de tentativas restantes
+- Validacao de letras ja tentadas
+- Mensagens de vitoria e derrota
+- Botoes Novo Jogo, Desistir e Dicas
+- Uma dica por partida, revelando uma letra nao tentada
+- Estatisticas persistentes de vitorias e derrotas em `estatisticas.json`
 
-O avaliador aceita apenas números e operadores aritméticos permitidos; não executa código digitado na expressão.
+## Regras
+
+Cada letra correta permanece revelada no display. Cada letra incorreta adiciona uma parte ao boneco. O jogo termina quando todas as letras sao descobertas ou seis erros sao atingidos.
+
+## Estrutura
+
+- `forca_gui.py`: funcoes do jogo, interface grafica e loop de eventos
+- `palavras.txt`: banco de palavras utilizado nas partidas
+- `test_forca_gui.py`: testes das regras, do display e das estatisticas
+- `estatisticas.json`: arquivo criado automaticamente ao encerrar uma partida
 
 ## Testes
 
-Execute os testes automatizados com:
+Execute:
 
 ```powershell
 py -m unittest discover -v
 ```
 
-## Estrutura
-
-- `calculadora_gui.py`: avaliador aritmético, interface e loop de eventos.
-- `test_calculadora_gui.py`: testes do cálculo, validação e tratamento de erros.
-
 ## Uso do GitHub Copilot
 
-O GitHub Copilot no VS Code foi usado como assistente durante a implementação. O enunciado fornecido foi usado como prompt para organizar a interface, as operações, o histórico e o tratamento de erros. O Copilot também auxiliou na implementação do avaliador seguro de expressões e na criação dos testes automatizados. As alterações foram verificadas executando a suíte de testes do projeto.
+O GitHub Copilot no VS Code foi utilizado como assistente para organizar a interface, implementar as funcoes principais, criar o banco de palavras, escrever os testes e revisar o README. A implementacao foi validada por testes automatizados.
